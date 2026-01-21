@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid x:Name="MenuPanel">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" Visibility="Collapsed">
+        <Grid x:Name="MenuPanel" Visibility="Collapsed">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" >
                 <TextBlock Text="Dungeon Dash" FontSize="42" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,16"/>
-                <Button Height="46" Margin="0,0,0,10" Content="Új játék"/>
-                <Button Height="46" Margin="0,0,0,10" Content="Betöltés"/>
-                <Button Height="46" Margin="0,0,0,10" Content="Kilépésk"/>
+                <Button Height="46" Margin="0,0,0,10" Content="Új játék" Click="NewGame_Click" />
+                <Button Height="46" Margin="0,0,0,10" Content="Betöltés" Click="Load_Click"/>
+                <Button Height="46" Margin="0,0,0,10" Content="Kilépésk" Click="Exit_Click"/>
             </StackPanel>
         </Grid>
         
@@ -21,18 +21,18 @@
                 <TextBlock Text="Válasz osztályt" FontSize="34" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,16"/>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Width="160" Height="64" Margin="8" Content="Harcos"/>
-                    <Button Width="160" Height="64" Margin="8" Content="Mágus"/>
-                    <Button Width="160" Height="64" Margin="8" Content="Íjász"/>
+                    <Button Width="160" Height="64" Margin="8" Content="Harcos" Click="Warrior_Click"/>
+                    <Button Width="160" Height="64" Margin="8" Content="Mágus" Click="Mage_Click"/>
+                    <Button Width="160" Height="64" Margin="8" Content="Íjász" Click="Archer_Click"/>
                 </StackPanel>
 
-                <Button Height="42" Margin="0,18,0,0" Content="Vissza"/>
+                <Button Height="42" Margin="0,18,0,0" Content="Vissza" Click="Back_Click"/>
 
                 <TextBlock Text="Írányítás: Nyilak mozgás, I Inventory, S mentés" Margin="0,18,0,0" TextAlignment="Center"/>
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="GamePanel" Margin="12">
+        <Grid x:Name="GamePanel" Margin="12" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="420"/>
