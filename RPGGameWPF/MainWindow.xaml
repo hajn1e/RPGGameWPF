@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPGGameWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        KeyDown="Window_Keydown">
     <Grid>
-        <Grid x:Name="MenuPanel" Visibility="Collapsed">
+        <Grid x:Name="MenuPanel" Visibility="Visible">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="360" >
                 <TextBlock Text="Dungeon Dash" FontSize="42" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,16"/>
                 <Button Height="46" Margin="0,0,0,10" Content="Új játék" Click="NewGame_Click" />
@@ -32,7 +33,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="GamePanel" Margin="12" Visibility="Visible">
+        <Grid x:Name="GamePanel" Margin="12" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="420"/>
