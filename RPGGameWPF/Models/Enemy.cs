@@ -31,5 +31,20 @@ namespace RPGGameWPF.Models
             }
 
         }
+
+        public Position DecideNextStep(Map map, Position heroPos)
+        {
+            int dx = Math.Sign(heroPos.X - Pos.X);
+            int dy = Math.Sign(heroPos.Y - Pos.Y);
+
+            var tryX= new Position(Pos.X + dx, Pos.Y);
+            var tryY= new Position(Pos.X, Pos.Y + dy);
+
+            if (dx != 0 && map.IsWalkable(tryX))return tryX;
+            if (dy != 0 && map.IsWalkable(tryY))return tryY;
+            return Pos; // Stay in place if can't move
+        }
+
     }
+
 }
